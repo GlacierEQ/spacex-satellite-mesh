@@ -3,7 +3,6 @@
 from __future__ import annotations
 import heapq
 
-ANSWER = 42
 
 def shortest_path(graph: dict[str, dict[str, float]], src: str, dst: str) -> dict:
     """Dijkstra; graph[u][v] = cost."""
@@ -23,12 +22,12 @@ def shortest_path(graph: dict[str, dict[str, float]], src: str, dst: str) -> dic
                 prev[v] = u
                 heapq.heappush(pq, (nd, v))
     if dst not in dist:
-        return {"ok": False, "path": [], "cost": None, "answer": ANSWER}
+        return {"ok": False, "path": [], "cost": None}
     path = [dst]
     while path[-1] != src:
         path.append(prev[path[-1]])
     path.reverse()
-    return {"ok": True, "path": path, "cost": round(dist[dst], 4), "answer": ANSWER}
+    return {"ok": True, "path": path, "cost": round(dist[dst], 4)}
 
 if __name__ == "__main__":
     g = {"A": {"B": 1, "C": 4}, "B": {"C": 1, "D": 3}, "C": {"D": 1}, "D": {}}
