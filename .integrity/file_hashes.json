@@ -1,0 +1,26 @@
+{
+  "repo": "spacex-satellite-mesh",
+  "algorithm": "sha256",
+  "file_count": 19,
+  "hashes": {
+    "README.md": "47896d4a70da1383e0c4cd72919c1e3eec1bd8b0f7dd04cad41bca2f69032103",
+    "EASTER_EGGS.md": "0c4fc58a6163b54497fc8327ec77f4293330eea4ba636e30db202836bd450900",
+    ".gitignore": "bdf5823fb39358309d859824c0bfe95e917594bd370372743c15fe08f55f98b2",
+    "AKOS.md": "eae48200ee1bf2ec3fe2f267668b1dd09bac66f3bd2e01420e5787413f247a07",
+    "AGENTS.md": "dfd8c0adcc1b0c4252b4230076b27833fb1d06f357401092aac00b7664e5c44b",
+    "HELIX_STRAND.md": "96f8b9df19c0234283d82c31a881b5dfefd722f20fe40e9423117726f7dd3ec0",
+    "mastermind_sidecar.py": "fae2330df1f1bb888ab048eab1986cd4624babaa6a94699c0f4c6a89e8db42c4",
+    "SECURITY_AND_FLEET_OPS.md": "26141c0f07d95847d679de423ddb7bdee6f3e319d204383c89a58d6d3bb610c7",
+    "ISSUE_CONTRACT.md": "9e8c7c16efaec3c5c4f91f7dd9dd588ae1351cbb78e4325efd3713821835ab58",
+    "HELIX.md": "66cc00a88d45a8a22c62b71dcc445d98f57a7c4f03ace7158fced571bd93bae3",
+    "tests/test_mesh.py": "60c67f9bfd3e18e5fcd5dc908d45f1d5984b8807b54724e43583f026efce5900",
+    "tests/test_core.py": "77e8dd88a91b3feecadfc790a21d34e6e94e7694a75ed7698c4a5a52a6219ad6",
+    "tests/test_mesh_route.py": "1fb48b92112ccb63bdf52b64a93a57a41d0246dfe75a584d3481ed0fa0a09bca",
+    ".shadow/config.json": "ba2aab43c52bcaddf14bf6356e17b13070cd5ac8caf44532d271514b97e26204",
+    ".github/workflows/ci.yml": "393542f8109cac2611d6ab41b8b062e6cc8be46894379568f15c0b7e2c1a639f",
+    "src/mesh_route.py": "204d89ceef46c310136678971f9e2f0b713fad4bad02b501a4369c1bd876000f",
+    "src/omega/constellation_manager.py": "55ef3676882e2220d3cc492a06cf75df42364c78e29e579993a14913b00f6da4",
+    "src/omega/temporal_routing.py": "69a1bdbcb3fe0b895b7a15292947a5db858fd39da9267eab073c1d9a789887c8",
+    "src/alpha/mesh_routing.py": "bed500b62fa8ff1ad42b07cda033059c9224dbca851c8bd884d3ba120b0652e9"
+  }
+}
