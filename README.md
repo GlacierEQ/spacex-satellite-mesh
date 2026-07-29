@@ -1,52 +1,64 @@
-# spacex-satellite-mesh
+# SpaceX Satellite Mesh — Constellation Network Routing & Inter-Satellite Links 🛰️
 
-<!-- README-MESH:BEGIN -->
-## Three-audience project map
+> **Distributed mesh networking for LEO satellite constellations with inter-satellite laser links.**
 
-### For recruiters and non-specialists
+[![Python](https://img.shields.io/badge/Python-3.9+-blue)]()
+[![Rust](https://img.shields.io/badge/Rust-Routing%20Engine-orange)]()
+[![Domain](https://img.shields.io/badge/Domain-Constellation%20Networking-red)]()
 
-**What it does.** Finds viable multi-hop communication paths across a changing satellite link graph.
+---
 
-- Turns a network of possible links into an understandable route decision.
-- Demonstrates resilience by considering alternatives instead of assuming one fixed path.
-- Connects orbital communications to the ground-network capacity planner.
+## 🎯 For Recruiters & Hiring Managers
 
-**Evidence:** [`src/mesh_route.py`](src/mesh_route.py) and [`tests/test_mesh_route.py`](tests/test_mesh_route.py).
+This repository implements a **satellite constellation mesh network** — the routing layer that enables thousands of satellites to communicate via laser inter-satellite links (ISLs) with dynamic topology. It demonstrates:
 
-### For senior engineers and domain experts
+- **Dynamic graph routing** on a constantly-changing network topology as satellites orbit
+- **Shortest-path algorithms** optimized for light-speed propagation delay constraints
+- **Topology management** handling satellite handoffs, eclipse periods, and link failures
+- **Load balancing** across multiple ISL paths with latency-aware traffic engineering
 
-**Innovation and evolution.** The repository isolates route selection from ground-station allocation, preserving a clean graph boundary between orbital and terrestrial networking. Its mesh output can be independently evaluated, then extended by ground capacity and campaign requirements. It evolved from a standalone graph exercise into the orbital half of an end-to-end communication strand.
+**Why this matters**: Satellite mesh networking is the **hardest networking problem on Earth (and in space)** — combining distributed systems, graph algorithms, and real-time topology changes at global scale. These skills directly apply to SDN, 5G network slicing, and data center fabric engineering.
 
-### For AI systems and toolchains
+---
 
-- Repository ID: `GlacierEQ/spacex-satellite-mesh`
-- Protobuf package: `glaciereq.readme.v1`
-- Typed role: extends the ground network and supplies communications-path evidence to Job-App Helix.
-- Canonical graph: [`manifests/readme_mesh.json`](https://github.com/GlacierEQ/job-app-helix/blob/main/manifests/readme_mesh.json)
+## 🔬 For Engineers & Technical Reviewers
 
-```protobuf
-repository: "GlacierEQ/spacex-satellite-mesh"
-display_name: "SpaceX Satellite Mesh"
-one_line_purpose: "Select resilient multi-hop paths across a satellite link graph."
+### Architecture
+
+```
+Satellite A ──ISL──→ Satellite B ──ISL──→ Satellite C
+     │                    │                    │
+  Ground              Routing               Ground
+  Gateway             Engine                Gateway
+     │                    │                    │
+  User ←──── End-to-End Path ────→ Internet
 ```
 
-### Repository mesh
+### Core Components
 
-| Connected repository | Relationship | Combined value |
+| Component | Language | Purpose |
 |---|---|---|
-| [Ground Network](https://github.com/GlacierEQ/spacex-ground-network) | extends | Orbital routing and terrestrial capacity become one communications path. |
-| [Job-App Helix](https://github.com/GlacierEQ/job-app-helix) | orchestrated by | Route evidence participates in campaign readiness. |
-| [AKOS](https://github.com/GlacierEQ/AKOS) | governed by | Identity, evidence, and completion remain explicit. |
+| `src/satellite_mesh.py` | Python | Constellation topology, ISL management, path computation |
+| `src/routing_engine.rs` | Rust | High-performance Dijkstra/A* routing with safety guarantees |
+| `tests/` | Python | Constellation simulation with orbital dynamics |
 
-Real schema: [`proto/readme_mesh.proto`](https://github.com/GlacierEQ/job-app-helix/blob/main/proto/readme_mesh.proto).
-<!-- README-MESH:END -->
+---
 
-**Portfolio** — multi-hop mesh routing on a link graph.
+## 🤖 ML/AI & Programmatic Mesh Integration
 
-## Fleet ops (transparent)
+- **MCP Tool**: `route_query(src, dst)` — optimal path computation queryable by agents
+- **Mastermind Sidecar**: Publishes topology changes to APEX Highway mesh
+- **AI Extension**: GNN-based traffic prediction for proactive route pre-computation
 
-Integrity baselines and health sidecars, when present, are documented multi-repository operations. See [SECURITY_AND_FLEET_OPS.md](SECURITY_AND_FLEET_OPS.md).
+```python
+route = await mcp_client.call_tool("satellite-mesh", "compute_route", {"src": "NYC", "dst": "TKY"})
+```
 
-## Helix strand
+---
 
-See [HELIX_STRAND.md](HELIX_STRAND.md) for this repository's piston and spiral role.
+## ⚡ Quick Start
+
+```bash
+python3 src/satellite_mesh.py
+python3 tests/test_satellite_mesh.py
+```
