@@ -1,0 +1,30 @@
+{
+  "schema": "glaciereq.operability-receipt.v1",
+  "repository": "GlacierEQ/spacex-satellite-mesh",
+  "at": "2026-08-10T04:12Z",
+  "source_sha": "844b38eba8c043ecda49643254ef6d4fc13f8f329e8a5731aea2f28b599d7cd6",
+  "entry": "scripts/operate.py",
+  "primary_output": {
+    "module": "mesh_route",
+    "ok": true,
+    "repository": "GlacierEQ/spacex-satellite-mesh",
+    "smoke": {
+      "args": [
+        "{'k': 1}",
+        "'sample_src'",
+        "'sample_dst'"
+      ],
+      "content_checked": true,
+      "invoked": true,
+      "kind": "fn",
+      "name": "shortest_path",
+      "result": {
+        "cost": null,
+        "ok": false,
+        "path": []
+      }
+    }
+  },
+  "dual_run_ok": true,
+  "result": "PASS"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "glaciereq.promotion-authority-grant.v1",
+  "repository": "GlacierEQ/spacex-satellite-mesh",
+  "source_sha": "844b38eba8c043ecda49643254ef6d4fc13f8f329e8a5731aea2f28b599d7cd6",
+  "proof_receipt_digest": "69f50359a511dc35f97e086f7317e471de2ca73d35e1687d6bb7e09de34fc326",
+  "not_after": 1788927149.234226,
+  "mac": "ccaebcccb2cce83c5315a0261e7994d6b525a801f95556178d76f0dbf6c16c27",
+  "issuer": "local_operator_promotion_authority",
+  "verified": true,
+  "secret_ref": "src/promotion_authority.py::LOCAL_OPERATOR_SECRET"
+}
