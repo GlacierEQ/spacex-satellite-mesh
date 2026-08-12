@@ -1,14 +1,53 @@
-name: CI
+name: Native functional verification
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main]
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
-  ci:
-    uses: GlacierEQ/public-actions-runner-host/.github/workflows/reusable-quick-ci.yml@main
-    with:
-      repo_name: ${{ github.event.repository.name }}
-      language: python
+  python:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e . pytest
+      - run: python -m compileall -q src tests
+      - run: pytest -q
+      - run: satellite-mesh demo > /tmp/static-route.json
+      - run: satellite-mesh temporal-demo > /tmp/temporal-route.json
+      - run: python -c 'import json; a=json.load(open("/tmp/static-route.json")); b=json.load(open("/tmp/temporal-route.json")); assert a["schema"] == "glaciereq.satellite-mesh-route.v1" and a["operational_authority"] is False; assert b["schema"] == "glaciereq.satellite-mesh-temporal-route.v1" and b["operational_authority"] is False'
+
+  rust:
+    name: Rust native routing kernel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo check --all-targets
+      - run: cargo test
+
+  required-functional-proof:
+    if: always()
+    needs: [python, rust]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require executable language boundaries
+        env:
+          PYTHON_RESULT: ${{ needs.python.result }}
+          RUST_RESULT: ${{ needs.rust.result }}
+        run: |
+          test "$PYTHON_RESULT" = "success"
+          test "$RUST_RESULT" = "success"
