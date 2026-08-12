@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glaciereq-satellite-mesh"
+version = "1.0.0"
+description = "Deterministic local constellation mesh and temporal-routing simulation"
+requires-python = ">=3.11"
+license = { text = "LicenseRef-GlacierEQ-Proprietary-1.1" }
+authors = [{ name = "GlacierEQ" }]
+
+[project.scripts]
+satellite-mesh = "satellite_mesh:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["satellite_mesh", "mesh_route", "promotion_authority"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = true
+include = ["alpha*", "omega*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

@@ -1,1 +1,22 @@
-{"capabilities": ["hyper-scaling"]}
+{
+  "schema": "glaciereq.capabilities.v2",
+  "capabilities": [
+    "validated-capacity-aware-static-mesh-routing",
+    "non-mutating-alternate-route-enumeration",
+    "simplified-constellation-coverage-simulation",
+    "primary-backup-ground-slot-assignment",
+    "deterministic-handoff-accounting",
+    "trajectory-bounded-temporal-link-windows",
+    "earliest-arrival-delay-tolerant-routing",
+    "python-static-and-temporal-json-cli",
+    "rust-native-routing-kernel"
+  ],
+  "nonclaims": [
+    "no SpaceX affiliation",
+    "no spacecraft or laser-terminal authority",
+    "no production constellation-scale claim",
+    "no guaranteed delivery",
+    "no live MCP or APEX integration",
+    "no GNN traffic predictor"
+  ]
+}

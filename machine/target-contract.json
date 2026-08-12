@@ -1,22 +1,40 @@
 {
-  "schema": "glaciereq.repo-target-contract.v1",
-  "identity": {
-    "repository_id": "GlacierEQ/spacex-satellite-mesh",
-    "family": "elite-estate"
-  },
+  "schema": "glaciereq.repo-target-contract.v2",
+  "repository": "GlacierEQ/spacex-satellite-mesh",
+  "purpose": "deterministic local constellation mesh and temporal-routing simulation",
   "current": {
-    "state": "PROMOTED",
+    "state": "FUNCTIONAL_CANDIDATE",
     "implemented": true,
-    "tested": true,
+    "exact_head_native_ci_verified": false,
     "deployed": false
   },
-  "nonclaims": [
-    "no employer affiliation",
-    "no production deployment without receipt"
+  "required_capabilities": [
+    "validated-capacity-aware-static-mesh-routing",
+    "non-mutating-alternate-route-enumeration",
+    "simplified-constellation-coverage-simulation",
+    "primary-backup-ground-slot-assignment",
+    "deterministic-handoff-accounting",
+    "trajectory-bounded-temporal-link-windows",
+    "earliest-arrival-delay-tolerant-routing",
+    "python-static-and-temporal-json-cli",
+    "rust-native-routing-kernel"
   ],
-  "donor_plan": {
-    "mode": "none",
-    "donors": []
-  },
-  "frozen_at": "2026-08-10T04:12Z"
+  "promotion_requires": [
+    "Python 3.11 full functional proof",
+    "Python 3.12 full functional proof",
+    "Python 3.13 full functional proof",
+    "Rust cargo check",
+    "Rust unit tests",
+    "static CLI smoke",
+    "temporal CLI smoke",
+    "required-functional-proof"
+  ],
+  "nonclaims": [
+    "no SpaceX affiliation",
+    "no spacecraft or laser-terminal authority",
+    "no production constellation-scale claim",
+    "no guaranteed delivery",
+    "no live MCP or APEX integration",
+    "no GNN traffic predictor"
+  ]
 }

@@ -1,0 +1,10 @@
+[package]
+name = "satellite-mesh-routing"
+version = "1.0.0"
+edition = "2021"
+description = "Deterministic native routing kernel for local satellite-mesh simulation"
+license = "LicenseRef-GlacierEQ-Proprietary-1.1"
+publish = false
+
+[lib]
+path = "src/routing_engine.rs"
