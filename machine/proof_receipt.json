@@ -4,12 +4,12 @@
   "source_sha": "844b38eba8c043ecda49643254ef6d4fc13f8f329e8a5731aea2f28b599d7cd6",
   "proof_id": "elite-spacex-satellite-mesh-1786335149",
   "environment": {
-    "python": "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python",
-    "PYTHONPATH": "/Users/kcbflux/job-app/repos/spacex-satellite-mesh:/Users/kcbflux/job-app/repos/spacex-satellite-mesh/src",
+    "python": "${HOME}/job-app/excellence/.venv-elite/bin/python",
+    "PYTHONPATH": "${HOME}/job-app/repos/spacex-satellite-mesh:${HOME}/job-app/repos/spacex-satellite-mesh/src",
     "entry": "unittest"
   },
   "tests": [
-    "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python -m unittest discover -s tests -v (x2)"
+    "${HOME}/job-app/excellence/.venv-elite/bin/python -m unittest discover -s tests -v (x2)"
   ],
   "adversarial_tests": [
     "tests/test_adversarial.py"

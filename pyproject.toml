@@ -23,5 +23,6 @@ namespaces = true
 include = ["alpha*", "omega*"]
 
 [tool.pytest.ini_options]
+pythonpath = [".", "src"]
 testpaths = ["tests"]
 addopts = "-ra"
